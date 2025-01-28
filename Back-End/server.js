@@ -9,8 +9,8 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/products", (req, res) => {});
-
+app.get("/products", (req, res) => {});//end point tested with postman
+                                       //working properly creating and error message
 app.post("/api/products", async (req, res) => {
     const product = req.body;
 
