@@ -6,9 +6,11 @@ dotenv.config();
 
 const app = express();
 
+app.use(express.json());
+
 app.get("/products", (req, res) => {});
 
-app.post("/products", async (req, res) => {
+app.post("/api/products", async (req, res) => {
     const product = req.body;
 
     if (!product.name || !product.price || !product.image){
