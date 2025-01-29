@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import Product from "./models/product.model.js";
-import e from "express";
+import mongoose from "mongoose";
 
 dotenv.config();
 
@@ -38,7 +38,7 @@ app.post("/api/products", async (req, res) => { //tested on postman working
     }
 });
 
-app.put("/api/products/:id", async (req,res) => {
+app.put("/api/products/:id", async (req,res) => { //tested and working with postman
     const { id } = req.params;
 
     const product = req.body;
@@ -48,7 +48,7 @@ app.put("/api/products/:id", async (req,res) => {
     }
 
     try {
-        await Product.findByIdAndUpdate( id, product,{new:true});
+        const updatedProduct = await Product.findByIdAndUpdate( id, product,{new:true});
         res.status(200).json({ success: true, data: updatedProduct });
     } catch (error) {
         res.status(500).json({ success: false, message: "Server Error"});
