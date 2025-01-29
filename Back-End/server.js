@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.get("/products", (req, res) => {});
 
-app.post("/api/products", async (req, res) => {
+app.post("/api/products", async (req, res) => { //tested on postman working
     const product = req.body;
 
     if (!product.name || !product.price || !product.image){
@@ -30,7 +30,7 @@ app.post("/api/products", async (req, res) => {
     }
 });
 
-app.delete("/api/products/:id", async (req,res) => {
+app.delete("/api/products/:id", async (req,res) => { //tested on postman working
     const {id} = req.params;
     
     try {
