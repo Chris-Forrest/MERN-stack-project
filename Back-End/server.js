@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/api/products", async (req, res) => {
+app.get("/api/products", async (req, res) => { //tested on postman working
     try {
         const products = await Product.find({}); // an empty object returns all products
         res.status(200).json({ success: true, data: products });
