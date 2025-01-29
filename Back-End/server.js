@@ -10,7 +10,15 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/products", (req, res) => {});
+app.get("/api/products", async (req, res) => {
+    try {
+        const products = await Product.find({}); // an empty object returns all products
+        res.status(200).json({ success: true, data: products });
+    }catch (error) {
+        console.log(" error in fetching products:", error.message);
+        res.status(500).json({ success: false, message: "Server Error"});
+    }
+});
 
 app.post("/api/products", async (req, res) => { //tested on postman working
     const product = req.body;
