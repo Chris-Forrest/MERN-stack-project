@@ -38,6 +38,23 @@ app.post("/api/products", async (req, res) => { //tested on postman working
     }
 });
 
+app.put("/api/products/:id", async (req,res) => {
+    const { id } = req.params;
+
+    const product = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ success: false, message: "Invalid Product Id" });
+    }
+
+    try {
+        await Product.findByIdAndUpdate( id, product,{new:true});
+        res.status(200).json({ success: true, data: updatedProduct });
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Server Error"});
+    }
+})
+
 app.delete("/api/products/:id", async (req,res) => { //tested on postman working
     const {id} = req.params;
     
