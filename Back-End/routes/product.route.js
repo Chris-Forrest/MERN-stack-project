@@ -4,7 +4,7 @@ import Product from "../models/product.model.js";
 
 const router = express.Router();
 
-router.get("", async (req, res) => { 
+router.get("/", async (req, res) => { 
     try {
         const products = await Product.find({}); // an empty object returns all products
         res.status(200).json({ success: true, data: products });
@@ -14,7 +14,7 @@ router.get("", async (req, res) => {
     }
 });
 
-router.post("", async (req, res) => { 
+router.post("/", async (req, res) => { 
     const product = req.body;
 
     if (!product.name || !product.price || !product.image){
