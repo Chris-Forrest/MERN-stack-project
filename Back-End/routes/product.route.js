@@ -9,7 +9,6 @@ router.get("/", async (req, res) => {
         const products = await Product.find({}); 
         res.status(200).json({ success: true, data: products });
     }catch (error) {
-        console.log(" error in fetching products:", error.message);
         res.status(500).json({ success: false, message: "Server Error"});
     }
 });
@@ -27,7 +26,6 @@ router.post("/", async (req, res) => {
         await newProduct.save();
         res.status(201).json({ success: true, data: newProduct });
     } catch (error){
-        console.error("Error in Create product:", error.message);
         res.status(500).json({ success: false, message: "Server Error"});
     }
 });
@@ -56,7 +54,6 @@ router.delete("/:id", async (req,res) => {
         await Product.findByIdAndDelete(id);
         res.status(200).json({ success: true, message: "Product Deleted"});
     }catch(error){
-        console.error("Error deleting product:",error.message);
         res.status(404).json({ success: false, message: "Product not found"});
     }
 });
