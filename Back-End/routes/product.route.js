@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => { 
     try {
-        const products = await Product.find({}); // an empty object returns all products
+        const products = await Product.find({}); 
         res.status(200).json({ success: true, data: products });
     }catch (error) {
         console.log(" error in fetching products:", error.message);
