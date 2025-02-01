@@ -1,4 +1,5 @@
 import Product from "../models/product.model.js";
+import mongoose from "mongoose";
 
 export const updateProduct = async (req,res) => { 
     const { id } = req.params;
