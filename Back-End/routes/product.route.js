@@ -1,17 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
 import Product from "../models/product.model.js";
+import { getProducts } from "./get.js";
 
 const router = express.Router();
 
-router.get("/", async (req, res) => { 
-    try {
-        const products = await Product.find({}); 
-        res.status(200).json({ success: true, data: products });
-    }catch (error) {
-        res.status(500).json({ success: false, message: "Server Error"});
-    }
-});
+router.get("/", getProducts);
 
 router.post("/", async (req, res) => { 
     const product = req.body;
