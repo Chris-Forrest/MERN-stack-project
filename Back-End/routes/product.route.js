@@ -2,27 +2,13 @@ import express from "express";
 import mongoose from "mongoose";
 import Product from "../models/product.model.js";
 import { getProducts } from "./get.js";
+import { createProduct } from "./post.js";
 
 const router = express.Router();
 
 router.get("/", getProducts);
 
-router.post("/", async (req, res) => { 
-    const product = req.body;
-
-    if (!product.name || !product.price || !product.image){
-        return res.status(400).json({ success: false, message: "Please provide all fields"});
-    }
-
-    const newProduct = new Product(product);
-
-    try {
-        await newProduct.save();
-        res.status(201).json({ success: true, data: newProduct });
-    } catch (error){
-        res.status(500).json({ success: false, message: "Server Error"});
-    }
-});
+router.post("/", createProduct);
 
 router.put("/:id", async (req,res) => { 
     const { id } = req.params;
