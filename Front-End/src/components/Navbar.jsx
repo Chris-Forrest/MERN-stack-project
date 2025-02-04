@@ -31,13 +31,12 @@ const Navbar = () => {
           <Link to={"/"}>Product Store 🛒</Link>
         </Text>
         <HStack spacing={2} alignItems={"center"}>
-          <Button>
+          <Button >
             <PlusSquareIcon fontSize={20} />
             <Button onClick={toggleColorMode}>
-              {colorMode === "light" ? <IoMoon /> : <LuSun size={20}  />}
+              {colorMode === "light" ? <IoMoon /> : <LuSun size="20" />}
             </Button>
           </Button>
-
         </HStack>
       </Flex>
     </Container>
