@@ -1,3 +1,4 @@
+import { Container, Heading, VStack } from '@chakra-ui/react';
 import React from 'react'
 
 const CreatePage = () => {
@@ -9,7 +10,13 @@ const CreatePage = () => {
   });
   
   return (
-    <div>CreatePage</div>
+    <Container>
+      <VStack spacing="8">
+        <Heading as="h1" size={"2x1"} textAlign={"center"} mb={8}>
+          Create New Product
+        </Heading>
+      </VStack>
+    </Container>
   )
 }
 
