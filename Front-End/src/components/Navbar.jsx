@@ -30,7 +30,7 @@ const Navbar = () => {
         >
           <Link to={"/"}>Product Store 🛒</Link>
         </Text>
-        <HStack spacing={2} alignItems={"center"}>
+        <HStack spacing={4} alignItems={"center"}>
           <Button >
             <PlusSquareIcon fontSize={20} />
             <Button onClick={toggleColorMode}>
