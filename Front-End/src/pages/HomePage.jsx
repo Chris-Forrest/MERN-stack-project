@@ -1,6 +1,7 @@
 import { Container, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useProductStore } from "../store/products";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
 	
@@ -15,7 +16,7 @@ const HomePage = () => {
             		bgClip={"text"}
 					textAlign={"center"}
 		       >
-			     Home Page 🚀
+			     Current Products 🚀
 		       </Text>
 			</VStack>
 		</Container>
