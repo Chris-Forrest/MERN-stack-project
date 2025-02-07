@@ -32,7 +32,9 @@ const Navbar = () => {
         </Text>
         <HStack spacing="2" >
           <Button >
-            <PlusSquareIcon fontSize={20} />
+            <Link to={"/create"}>
+              <PlusSquareIcon fontSize={20} />
+            </Link>
             <Button variant="plain" onClick={toggleColorMode}>
               {colorMode === "light" ? <IoMoon /> : <LuSun size="20" />}
             </Button>
