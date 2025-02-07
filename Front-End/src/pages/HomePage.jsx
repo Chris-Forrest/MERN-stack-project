@@ -34,9 +34,9 @@ const HomePage = () => {
 					spacing={10}
 					w={"full"}
 			   >
-					{products.map((product) => {
+					{products.map((product) => (
 						<ProductCard key={product._id} product={product} />
-					})}
+					))}
 
 			   </SimpleGrid>
 			   <Text
