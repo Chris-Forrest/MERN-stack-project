@@ -6,7 +6,15 @@ const HomePage = () => {
 	
 
 	return (
-		<Text>Home Page</Text>
+		<Container maxW={"container.xl"} py={12}>
+			<VStack spacing={8}>
+			   <Text
+		
+		       >
+			     Home Page 🚀
+		       </Text>
+			</VStack>
+		</Container>
 	);
 };
 export default HomePage;
