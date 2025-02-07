@@ -1,4 +1,4 @@
-import { Box, Heading, Image } from "@chakra-ui/react"
+import { Box, Heading, Image, Text } from "@chakra-ui/react"
 
 const ProductCard = ({ product }) => {
     return(
@@ -23,6 +23,14 @@ const ProductCard = ({ product }) => {
                     >
                         {product.name}
                     </Heading>
+                    <Text
+                        fontWeight={'bold'}
+                        fontSize={'xl'}
+                        color={'blue.900'}
+                        mb={4}
+                    >
+                        ${product.price}
+                    </Text>
                 </Box>
 
         </Box>
