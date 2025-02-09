@@ -25,7 +25,7 @@ const HomePage = () => {
 		       >
 			     Current Products 🚀
 		       </Text>
-			   <SimpleGrid
+			     <SimpleGrid
 			   		columns={{
 						base: 1,
 						md: 2,
@@ -33,12 +33,12 @@ const HomePage = () => {
 					}}
 					spacing={10}
 					w={"full"}
-			   >
+			     >
 					{products.map((product) => (
 						<ProductCard key={product._id} product={product} />
 					))}
 
-			   </SimpleGrid>
+			     </SimpleGrid>
 			   <Text
 			   		fontSize={"xl"}
 					textAlign={"center"}
