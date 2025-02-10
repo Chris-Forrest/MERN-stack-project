@@ -1,5 +1,13 @@
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
-import { Box, Heading, HStack, IconButton, Image, Text, useColorModeValue, useToast } from "@chakra-ui/react"
+import { Box, 
+         Heading, 
+         HStack, 
+         IconButton, 
+         Image, 
+         Text, 
+         useColorModeValue, 
+         useToast } 
+         from "@chakra-ui/react"
 import { useProductStore } from "../store/products";
 
 const ProductCard = ({ product }) => {
