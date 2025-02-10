@@ -33,7 +33,7 @@
             set(state => ({ products: state.products.filter( product => product._id !== pid)}));
             return { success: true, message: data.message };
         },
-        upDateProduct: async (pid, updatedProduct) => {
+        updateProduct: async (pid, updatedProduct) => {
             const res = await fetch(`/api/products/${pid}`, {
                 method: "PUT",
                 headers: {
