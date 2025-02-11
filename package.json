@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon Back-End/server.js",
-    "start": "cross-env NODE_ENV=production node Back-End/server.js --output public",
-    "build": "npm install && npm install --prefix Front-End && npm run build --prefix Front-End"
+    "start": "cross-env NODE_ENV=production node Back-End/server.js ",
+    "build": "npm install && npm install --prefix Front-End && npm run build --prefix Front-End --output public"
   },
   "type": "module",
   "keywords": [],
