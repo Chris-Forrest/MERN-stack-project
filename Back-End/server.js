@@ -18,7 +18,7 @@ app.use("/api/products", productRoutes);
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(_dirname, "/Front-End/dist")));
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+        res.sendFile(path.resolve(_dirname, "Front-End", "dist", "index.html"));
     })
 };
 
